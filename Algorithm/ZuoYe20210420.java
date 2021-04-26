@@ -10,9 +10,9 @@ public class ZuoYe20210420   //2021年4月20日课堂作业
     public static void main(String[] args)
     {
         System.out.print("请输入顺序表一，数字用空格间隔，以回车号结束:\n");
-        int [] m = InPut();
+        int [] m = inPut();
         System.out.print("请输入顺序表二，数字用空格间隔，以回车号结束:\n");
-        int [] n = InPut();
+        int [] n = inPut();
         System.out.print("下面进行两个长度不一的顺序表合并，并进行去重和排序操作:\n");
         Combinet(m, n);
     }
@@ -52,7 +52,7 @@ public class ZuoYe20210420   //2021年4月20日课堂作业
         }
     }
 
-    public static int[] InPut()   //输入顺序表，其中已处理用户输入多空格的问题
+    public static int[] inPut()   //输入顺序表，其中已处理用户输入多空格的问题
     {
         Scanner in = new Scanner(System.in);
         String t = in.nextLine();

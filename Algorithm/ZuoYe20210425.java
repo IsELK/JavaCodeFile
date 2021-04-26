@@ -10,16 +10,16 @@ public class ZuoYe20210425      //2021年4月25日课堂作业
     public static void main(String[] args)
     {
         System.out.print("情输入第一条非零多项式(空格间隔):\n");
-        int [] m = InPut();
+        int [] m = inPut();
         System.out.print("情输入第二条非零多项式(空格间隔):\n");
-        int [] n = InPut();
+        int [] n = inPut();
         System.out.print("两个多项式相加的结果为:\n");
-        AddArrays(m, n);
+        addArrays(m, n);
     }
 
-    public static void AddArrays(int [] m, int [] n)   //非零多项式相加操作
+    public static void addArrays(int [] m, int [] n)   //非零多项式相加操作
     {
-        int [] c = CiShu(m, n);
+        int [] c = ciShu(m, n);
         int [][] o = new int[c.length][2];   //创建存放多项式次数和系数的二位数组
         int t = o.length - 1;
         for(int i = 0; i < o.length; i++)   //倒序导入次数实现降序
@@ -51,7 +51,7 @@ public class ZuoYe20210425      //2021年4月25日课堂作业
         }
     }
 
-    public static int[] CiShu(int [] m, int [] n)  //寻找两个多项式中有的次数并且去重
+    public static int[] ciShu(int [] m, int [] n)  //寻找两个多项式中有的次数并且去重
     {
         int [] temp = new int[m[0]+n[0]];   //建立一个零时顺序表数组存放次数
         int templen = 0;   //记录顺序表的长度
@@ -86,7 +86,7 @@ public class ZuoYe20210425      //2021年4月25日课堂作业
         return c;
     }
 
-    public static int[] InPut()   //输入顺序表，其中已处理用户输入多空格的问题
+    public static int[] inPut()   //输入顺序表，其中已处理用户输入多空格的问题
     {
         Scanner in = new Scanner(System.in);
         String t = in.nextLine();
