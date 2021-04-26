@@ -9,9 +9,9 @@ public class ZuoYe20210425      //2021年4月25日课堂作业
 {
     public static void main(String[] args)
     {
-        System.out.print("情输入第一条非零多项式(空格间隔):\n");
+        System.out.print("请输入第一条非零多项式(空格间隔):\n");
         int [] m = inPut();
-        System.out.print("情输入第二条非零多项式(空格间隔):\n");
+        System.out.print("请输入第二条非零多项式(空格间隔):\n");
         int [] n = inPut();
         System.out.print("两个多项式相加的结果为:\n");
         addArrays(m, n);
