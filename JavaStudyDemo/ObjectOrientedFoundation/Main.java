@@ -5,6 +5,64 @@ package JavaStudyDemo.ObjectOrientedFoundation;
 
 
 /*
+public class Main   //String类
+{
+    public static void main(String[]args)
+    {
+        Damo1();
+        Damo2();
+    }
+
+    public static void Damo1()
+    {
+        String damo1 = "ELK.";   //直接赋值
+        System.out.println("姓名:"+damo1);
+        String damo2 = new String("ELK.");   //通过new来赋值
+        System.out.println("姓名:"+damo2);
+        String damo3 = damo2;   //引用传递
+        System.out.println("damo1 == damo2 -->"+(damo1 == damo2));
+        System.out.println("damo1 == damo3 -->"+(damo1 == damo3));
+        System.out.println("damo2 == damo3 -->"+(damo2 == damo3));
+        System.out.println("damo2 equals damo3 -->"+(damo1.equals(damo2)));
+        System.out.println("damo2 equals damo3 -->"+(damo1.equals(damo3)));
+        System.out.println("damo2 equals damo3 -->"+(damo2.equals(damo3)));
+        //结论: String有两种比较方式
+        //种是使用“==”完成,比较的是地址值
+        //另一种是使用“equals”方法完成,比较的是具体的内容,开发中比较常用
+    }
+
+    public static void Damo2()
+    {
+        System.out.println("hello".equals("hello"));
+        //一个字符串就是String的匿名对象
+        String damo1 = "hello";   //直接赋值
+        String damo2 = "hello";   //直接赋值
+        String damo3 = "hello";   //直接赋值
+        System.out.println("damo1 == damo2 -->"+(damo1 == damo2));
+        System.out.println("damo1 == damo3 -->"+(damo1 == damo3));
+        System.out.println("damo2 == damo3 -->"+(damo2 == damo3));
+        String damo4 = new String("hello");   //使用new赋值
+        //使用直接赋值的方式只需要一个实例化对象即可,
+        //而使用new String()的方式则意味着要开辟两个内存对象。
+        //开发中最好使用直接赋值的方式完成。
+        damo4 = damo4 + " world!!!";
+        System.out.println(damo4);
+        //字符串的内容一旦声明则不可改变
+        //实际上字符串内容的改变,改变的是内存地址的引用关系。
+        //所以,在开发中应该避免如下的使用操作
+        String damo5 = "ELK.";
+        for(int i = 0; i < 100; i++)
+        {
+            damo5 = damo5 + i;
+        }
+        System.out.println(damo5);
+        //但是这样的操作,要断开连接引用100次才可以完成。
+        // 这样的操作性能很低,应该避免使用。
+    }
+}
+*/
+
+/*
 public class Main   //类设计分析（学生类）
 {
     public static void main(String[]args)
