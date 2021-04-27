@@ -114,7 +114,7 @@ class Student
         return min;
     }
 }
-*///类设计分析（学生类）
+*/
 
 /*
 public class Main   //构造方法与匿名对象
@@ -170,7 +170,7 @@ class PerSon
         return age;
     }
 }
-*///构造方法与匿名对象
+*/
 
 /*
 public class Main   //封装性
@@ -210,7 +210,7 @@ class Person
         return age;
     }
 }
-*///封装性
+*/
 
 /*
 public class Main   //类与对象的进一步研究
@@ -264,6 +264,6 @@ class Person
         System.out.print(" 姓名:"+name+" 年龄:"+age);
     }
 }
-*///面向对象、类与对象的定义
+*/
 
 //这是结尾!!!
