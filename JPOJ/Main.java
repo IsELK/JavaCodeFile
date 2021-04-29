@@ -1,6 +1,107 @@
 package JPOJ;
 
 
+
+//import java.util.Scanner;
+//
+//public class Main   //D. 下一个镜像数
+//{
+//    public static void main(String[]args)
+//    {
+//        Scanner in = new Scanner(System.in);
+//        int x = in.nextInt();
+//        for(int i = 0; i < x; i++)
+//        {
+//            long y = in.nextLong();
+//            for(long j = y + 2; j < 1000000000000000000L; j+=2)
+//            {
+//                int yl = ((j+"").length() / 2) + 1;
+//                String a = String.valueOf(j).substring(0, yl);
+//                String b = String.valueOf(j).substring(yl - 1);
+//                char [] tb = b.toCharArray();
+//                int temp = 0;
+//                for(int k = tb.length - 1; k >= 0; k--)
+//                {
+//                    temp += (int)tb[k] - (int)'0';
+//                    temp *= 10;
+//                }
+//                temp /= 10;
+//                b = String.valueOf(temp);
+//                if(a.equals(b))
+//                {
+//                    System.out.println(j);
+//                    break;
+//                }
+//            }
+//        }
+//    }
+//}
+
+/*
+import java.util.Scanner;
+
+public class Main   //C. 班级就餐
+{
+    public static void main(String[]args)
+    {
+        Scanner in = new Scanner(System.in);
+        int x = in.nextInt();
+        for(int i = 0; i < x; i++)
+        {
+            int y = in.nextInt();
+            int m = (y / 3) * 90;
+            if(y % 3 == 2)
+            {
+                m += 70;
+            }
+            else if(y % 3 == 1)
+            {
+                m += 40;
+            }
+            System.out.println(m);
+        }
+    }
+}
+*/
+
+/*
+import java.util.Scanner;
+
+public class Main   //B. 摸鱼的稿子
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        char [] x = in.nextLine().toCharArray();
+        char [] y = in.nextLine().toCharArray();
+        int yl = 0;
+        for(int i = 0; i < x.length; i++)
+        {
+            if(Character.isUpperCase(x[i]))
+            {
+                int t = yl % y.length;
+                x[i] = Character.toUpperCase(y[t]);
+                yl++;
+            }
+            else if(Character.isLowerCase(x[i]))
+            {
+                int t = yl % y.length;
+                x[i] = Character.toLowerCase(y[t]);
+                yl++;
+            }
+            else
+            {
+                yl = 0;
+            }
+        }
+        for(int i = 0; i < x.length; i++)
+        {
+            System.out.print(x[i]);
+        }
+    }
+}
+*/
+
 /*
 import java.util.Scanner;
 

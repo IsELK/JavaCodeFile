@@ -12,59 +12,61 @@ public class Node
         private String Email;   //声明一个地址属性
         private String BornAdd;   //声明一个家庭住址属性
         public Friend(){}   //声明一个无参的构造方法
-        public Friend(String Name,String Tel,String Email,String BornAdd)
+        public Friend(String Name,String Tel,String Email,String BornAdd)   //声明一个多参的构造方法
         {
-            this.Name=Name;
-            this.Tel=Tel;
-            this.Email=Email;
-            this.BornAdd=BornAdd;
+            this.setName(Name);   //通过setter给Name赋值
+            this.setTel(Tel);   //通过setter给Tel赋值
+            this.setEmail(Email);   //通过setter给Email赋值
+            this.setBornAdd(BornAdd);   //通过setter给BornAdd赋值
         }
-        public String getName()
-        {
-            return Name;
-        }
-        public void setName(String Name)
+        public void setName(String Name)   //用setter方法使得类中的Name可以被赋值
         {
             this.Name=Name;
         }
-        public void setTel(String Tel)
+        public String getName()   //用getter方法使得类中的Name可以被读取
+        {
+            return this.Name;
+        }
+        public void setTel(String Tel)   //用setter方法使得类中的Tel可以被赋值
         {
             this.Tel=Tel;
 
         }
-        public String getTel()
+        public String getTel()   //用getter方法使得类中的Tel可以被读取
         {
-            return Tel;
+            return this.Tel;
         }
-        public void setEmail(String Email)
+        public void setEmail(String Email)   //用setter方法使得类中的Email可以被赋值
         {
             this.Email=Email;
         }
-        public String getEmail()
+        public String getEmail()   //用getter方法使得类中的Email可以被读取
         {
-            return Email;
+            return this.Email;
         }
-        public void setBornAdd(String BornAdd)
+        public void setBornAdd(String BornAdd)   //用setter方法使得类中的BornAdd可以被赋值
         {
             this.BornAdd=BornAdd;
         }
-        public String getBornAdd()
+        public String getBornAdd()   //用getter方法使得类中的BornAdd可以被读取
         {
-            return BornAdd;
+            return this.BornAdd;
         }
-        public void message(String Name,String Tel,String Email,String BornAdd)
+
+        public void message(String Name,String Tel,String Email,String BornAdd)   //声明一个方法可以直接给类中的属性赋值
         {
             this.Name=Name;
             this.Tel=Tel;
             this.Email=Email;
             this.BornAdd=BornAdd;
         }
-        public String toString()
+        public String toString()   //直接输出类中的属性
         {
             return this.Name+"\t"+this.Tel+"\t"+this.Email+"\t"+this.BornAdd;
 
         }
     }
+
     private int size;
     private Friend head;
     {
@@ -233,10 +235,10 @@ public class Node
                     System.out.println("输入错误");
             }
         }
-        in.close();
+        in.close();   //关闭输入流
     }
 
-    public static  void printMenu()
+    public static  void printMenu()   //输出目录
     {
         System.out.println("通讯录管理系统");
         System.out.println("*****************");
