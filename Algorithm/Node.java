@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Node
 {
-    public class Friend
+    public class Friend   //构建一个成员内部类
     {
         public Friend next;
         private String Name;   //声明一个名字属性
@@ -70,24 +70,25 @@ public class Node
     private int size;
     private Friend head;
     {
-        this.size=0;
-        this.head=null;
-
+        this.size=0;   //初始化
+        this.head=null;   //初始化
     }
 
-    public void insertHead(Friend s)
+    public void insertHead(Friend s)   //导入数据
     {
         if (this.size == 0)
         {
             this.head=s;
         }
-        else{s.next=this.head;
+        else
+        {
+            s.next=this.head;
             this.head=s;
         }
         this.size++;
     }
 
-    public boolean delete(String Name)
+    public boolean delete(String Name)   //删除联系人
     {
         Friend front=this.head;
         if(Name.equals(front.getName()))
@@ -110,7 +111,7 @@ public class Node
         return false;
     }
 
-    public Friend select(String Name)
+    public Friend select(String Name)   //查找数据并且返回找到的数据
     {
         Friend front=this.head;
         if(Name.equals(front.getName()))
@@ -130,7 +131,8 @@ public class Node
         return null;
     }
 
-    public void display(){
+    public void display()   //输出通讯录
+    {
         System.out.println("姓名\t手机号\t邮箱地址\t家庭住址");
         Friend front=this.head;
         while (front!=null&&front.getName()!=null)
@@ -144,17 +146,17 @@ public class Node
         }
     }
 
-    public static void main(String[] args)
+    public static void main(String[] args)   //主方法
     {
-        Node sm = new Node();
+        Node sm = new Node();   //声明且实例化Node对象
         Scanner in = new Scanner(System.in);
-        boolean open = true;
-        while (open)
+        boolean open = true;   //控制输入的循环
+        while (open)   //循环让用户可以一直选择功能
         {
-            printMenu();
+            printMenu();   //输出目录
             System.out.println("请输入菜单序号进行操作");
             int menu = -1;
-            try
+            try   //捕获例外异常，防止输入不为int值
             {
                 menu = in.nextInt();
             }
@@ -162,26 +164,25 @@ public class Node
             {
                 in = new Scanner(System.in);
             }
-            switch (menu)
+            switch (menu)   //根据用户的输入选择功能
             {
-                case 0:
+                case 0:   //创建链表
                 {
                     System.out.println("创建成功");
                 }
                 break;
-                case 1:
+                case 1:   //插入联系人
                 {
                     System.out.println("请输入姓名");
-                    String Name1 = in.next();
-
+                    String Name1 = in.next();   //输入姓名
                     System.out.println("手机号，邮箱地址，家庭地址（空格结束，回车确认插入）");
-                    try
+                    try   //捕获例外异常
                     {
-                        String Tel = in.next();
-                        String Email = in.next();
-                        String BornAdd = in.next();
-                        Friend news = sm.new Friend(Name1, Tel, Email, BornAdd);
-                        sm.insertHead(news);
+                        String Tel = in.next();   //输入电话号码
+                        String Email = in.next();   //输入邮箱地址
+                        String BornAdd = in.next();   //输入家庭地址
+                        Friend news = sm.new Friend(Name1, Tel, Email, BornAdd);   //声明Friend类的多参方法导入数据
+                        sm.insertHead(news);   //导入数据
                     }
                     catch (Exception e)
                     {
@@ -190,26 +191,27 @@ public class Node
                     }
                     break;
                 }
-                case 2: {
+                case 2:   //查找联系人
+                {
                     System.out.println("请输入要查询联系人的姓名");
                     String Name2 = in.next();
-                    Friend selectS = sm.select(Name2);
-                    System.out.println("姓名\t手机号\t邮箱地址\t家庭地址");
-                    if (selectS == null)
+                    Friend selectS = sm.select(Name2);   //调用方法查找
+                    if (selectS == null)   //判断是否有此人
                     {
-
+                        System.out.println("查无此人");
                     }
                     else
                     {
+                        System.out.println("姓名\t手机号\t邮箱地址\t家庭地址");
                         System.out.println(selectS.toString());
                     }
                 }
                 break;
-                case 3:
+                case 3:   //删除联系人
                 {
                     System.out.println("请输入要删除联系人的姓名");
                     String Name3 = in.next();
-                    if (sm.delete(Name3))
+                    if (sm.delete(Name3))   //判断返回是否删除成功
                     {
                         System.out.println("删除成功");
                     }
@@ -217,15 +219,15 @@ public class Node
                     {
                         System.out.println("删除失败");
                     }
-                    sm.display();
+                    sm.display();   //打印数据
                 }
                 break;
-                case 4:
+                case 4:   //输出通讯录
                 {
                     sm.display();
                 }
                 break;
-                case 5:
+                case 5:   //退出系统
                 {
                     System.out.println("系统已退出");
                     System.exit(0);
