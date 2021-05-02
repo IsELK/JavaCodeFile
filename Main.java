@@ -49,7 +49,7 @@ class Student
             {
                 break;
             }
-            temp.print();   //输出节点的信息
+            System.out.print(temp.print());//输出节点的信息
             temp = temp.next;   //没到结尾就把temp指向链表的下一个位置
         }
     }
@@ -67,8 +67,8 @@ class HeadNode   //头节点
         this.id = id;
         this.number = number;
     }
-    public void print()   //声明一个打印数据的方法
+    public String print()   //声明一个打印数据的方法
     {
-        System.out.print("[name = "+name+"][id = "+id+"][number = "+number+"]\n");
+        return "[name = "+this.name+"] [id = "+this.id+"] [number = "+this.number+"]\n";
     }
 }

@@ -89,7 +89,7 @@ public class ZuoYe20210425      //2021年4月25日课堂作业
     public static int[] inPut()   //输入顺序表，其中已处理用户输入多空格的问题
     {
         Scanner in = new Scanner(System.in);
-        String t = in.nextLine();
+        String t = in.nextLine().trim();
         int x = t.indexOf("  ");   //搜索有两个空格的位置，没有则返回-1并不会进入循环
         while (x != -1)   //循环处理有两个空格的地方
         {
