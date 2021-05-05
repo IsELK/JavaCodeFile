@@ -55,7 +55,8 @@ class MergeArrays   //声明合并数组
 
     public int mard(int m, int n)   //合并并且去重,类全名(Merge and remove duplicates)
     {
-
+        int o = 0;
+        return o;
     }
 
     public static int[] inPutSpare()   //返回一个处理了空格的int输入数组
