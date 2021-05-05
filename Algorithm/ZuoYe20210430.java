@@ -5,7 +5,7 @@ package Algorithm;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class ZuoYe20210430   ////2021年4月30日课堂作业
+class ZuoYe20210430   //2021年4月30日课堂作业
 {
     public static void main(String[]args)
     {
@@ -14,24 +14,7 @@ class ZuoYe20210430   ////2021年4月30日课堂作业
 
     }
 
-    public static int[] inPutSpare()   //返回一个处理了空格的int输入数组
-    {
-        Scanner in = new Scanner(System.in);
-        String s = in.nextLine().trim();
-        int sp = s.indexOf("  ");
-        while(sp != -1)
-        {
-            s = s.substring(0, sp) + s.substring(sp + 1);
-            sp = s.indexOf("  ");
-        }
-        String [] sa = s.split(" ");
-        int [] ia = new int[sa.length];
-        for(int i = 0; i < ia.length; i++)
-        {
-            ia[i] = Integer.parseInt(sa[i]);
-        }
-        return ia;
-    }
+
 }
 
 class MergeArrays   //声明合并数组
@@ -68,6 +51,30 @@ class MergeArrays   //声明合并数组
         {
             return null;
         }
+    }
+
+    public int mard(int m, int n)   //合并并且去重,类全名(Merge and remove duplicates)
+    {
+
+    }
+
+    public static int[] inPutSpare()   //返回一个处理了空格的int输入数组
+    {
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine().trim();
+        int sp = s.indexOf("  ");
+        while(sp != -1)
+        {
+            s = s.substring(0, sp) + s.substring(sp + 1);
+            sp = s.indexOf("  ");
+        }
+        String [] sa = s.split(" ");
+        int [] ia = new int[sa.length];
+        for(int i = 0; i < ia.length; i++)
+        {
+            ia[i] = Integer.parseInt(sa[i]);
+        }
+        return ia;
     }
 }
 
