@@ -226,7 +226,6 @@ class MergeArrays   //声明合并数组
                 o[ol] = y[i];
                 ol++;
             }
-            ol--;
             Arrays.sort(o);   //把导入完数据的总顺序表排序
             for(int i = 0; i < ol-1; i++)   //遍历数组查重并删除
             {
@@ -240,12 +239,12 @@ class MergeArrays   //声明合并数组
                     ol--;   //删除后总顺序表的计数少一
                 }
             }
-            int [] p = new int[ol+1];
+            int [] p = new int[ol];
             for(int i = 0; i < p.length; i++)
             {
                 p[i] = o[i];
             }
-            int lt = ma.addNode(new OneNode(o));
+            int lt = ma.addNode(new OneNode(p));
             return lt;
         }
         else

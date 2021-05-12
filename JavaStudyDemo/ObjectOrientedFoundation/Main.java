@@ -5,6 +5,291 @@ package JavaStudyDemo.ObjectOrientedFoundation;
 
 
 /*
+public class Main   //引用传递及其应用
+{
+    public static void main(String[]args)
+    {
+        //三道引用传递范例
+        Demo d1 = new Demo();   //声明且实例化Demo对象
+        d1.temp = 50;   //修改temp的内容
+        System.out.println("fun1()方法调用之前:" + d1.temp);
+        fun1(d1);   //调用fun1方法
+        System.out.println("fun1()方法调用之后:" + d1.temp);
+
+        String s = "Elk";
+        System.out.println("fun2()方法调用之前:" + s);
+        fun2(s);   //调用fun2方法
+        System.out.println("fun2()方法调用之后:" + s);
+
+        Demo d2 = new Demo();   //声明且实例化Demo对象
+        d2.tmp = "Elk";   //修改temp的内容
+        System.out.println("fun3()方法调用之前:" + d2.tmp);
+        fun3(d2);   //调用fun3方法
+        System.out.println("fun3()方法调用之后:" + d2.tmp);
+
+        //接受本类引用
+        Demo d3 = new Demo();   //声明且实例化Demo对象
+        d3.setT(666);
+        System.out.println("fun4()方法调用之前:" + d3.getT());
+        d3.fun4(d3);   //调用fun4方法
+        System.out.println("fun4()方法调用之后:" + d3.getT());
+
+        //一对一关系
+        Person per = new Person("ELK", 18);
+        Book bk = new Book("Java EE", 199);
+        per.setBook(bk);
+        bk.setPerson(per);
+        System.out.println("通过人找到书---> 姓名:"+per.getName()+" 年龄:"+per.getAge()+"; 书名:"+per.getBook().getTitle()+" 价格:"+per.getBook().getPrice());
+        System.out.println("通过书找到人---> 书名:"+bk.getTitle()+" 价格:"+bk.getPrice()+"; 姓名:"+bk.getPerson().getName()+" 年龄:"+bk.getPerson().getAge());
+
+        //进一步深入一对一关系
+        Person cld = new Person("Tasty",17);
+        Book b = new Book("C++", 666);
+        cld.setBook(b);
+        b.setPerson(cld);
+        per.setChild(cld);
+        System.out.println(per.getName()+"的孩子--->"+per.getChild().getName()+" 年龄:"+per.getChild().getAge()+"; 书名:"+per.getChild().getBook().getTitle()+" 价格:"+per.getChild().getBook().getPrice());
+    }
+
+    public static void fun3(Demo d2)   //该方法由主方法直接调用
+    {
+        d2.tmp = "kzy";
+    }
+
+    public static void fun2(String s)   //该方法由主方法直接调用
+    {
+        s = "kzy";
+    }
+
+    public static void fun1(Demo d1)   //该方法由主方法直接调用
+    {
+        d1.temp = 1000;   //修改temp值
+    }
+}
+
+class Person   //定义Person类
+{
+    private String name;   //姓名
+    private int age;   //年龄
+    private Book book;   //一个人有一本书
+    private Person child;   //一个人有一个孩子
+    public Person(String name, int age)   //声明多参构造方法
+    {
+        this.setName(name);
+        this.setAge(age);
+    }
+    //声明setter和getter方法来设置和访问类中的私有属性
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+    public int getAge()
+    {
+        return age;
+    }
+    public void setBook(Book book)
+    {
+        this.book = book;
+    }
+    public Book getBook()
+    {
+        return book;
+    }
+    public void setChild(Person child)
+    {
+        this.child = child;
+    }
+    public Person getChild()
+    {
+        return child;
+    }
+}
+
+class Book   //定义Book类
+{
+    private String title;   //标题
+    private float price;   //加个
+    private Person person;   //一本书属于一个人
+    public Book(String title, float price)   //声明多参构造方法
+    {
+        this.setTitle(title);
+        this.setPrice(price);
+    }
+    //声明setter和getter方法来设置和访问类中的私有属性
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }
+    public String getTitle()
+    {
+        return title;
+    }
+    public void setPrice(float price)
+    {
+        this.price = price;
+    }
+    public float getPrice()
+    {
+        return price;
+    }
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+    public Person getPerson()
+    {
+        return person;
+    }
+}
+
+class Demo   //定义Demo类
+{
+    private int t = 100;   //声明t属性并封装
+    int temp = 10;   //为了方便访问，此处不封装
+    String tmp = "hello";   //为了方便访问，此处不封装
+    public void fun4(Demo d)   //直接通过对象调用来访问类中的私有属性
+    {
+        this.t = 999;
+    }
+    public void setT(int t)   //用setter设置属性t
+    {
+        this.t = t;
+    }
+    public int getT()   //用getter方法访问属性t
+    {
+        return t;
+    }
+}
+*/
+
+/*
+public class Main   //String类的常用方法
+{
+    public static void main(String[]args)
+    {
+        String s = "   Hello World!!!   ";   //定义一个字符串
+        demo1(s);
+        demo2(s);
+        demo3(s);
+        demo4(s);
+        demo5(s);
+        demo6(s);
+        demo7(s);
+        demo8(s);
+        demo9(s);
+        demo10(s);
+        demo11(s);
+        demo12(s);
+    }
+
+    public static void demo1(String s)   //字符串和字符串数组的相互转换功能
+    {
+        System.out.print("\n字符串和字符串数组的相互转换功能\n");
+        char [] c = s.toCharArray();   //把字符串变成字符数组
+        for(int i = 0; i < c.length; i++)   //遍历输出
+        {
+            System.out.print(c[i] + " ");
+        }
+        System.out.println();
+        String s1 = new String(c);   //把字符数组全部变为一个字符串
+        System.out.println(s1);
+        String s2 = new String(c, 0, 8);   //把字符数组从指定的位置以及位数变为字符串
+        System.out.println(s2);
+    }
+
+    public static void demo2(String s)   //从字符串中取出指定位置的字符
+    {
+        System.out.print("\n从字符串中取出指定位置的字符\n");
+        char c = s.charAt(7);    //取出字符串中的第4个字符
+        System.out.println(c);
+    }
+
+    public static void demo3(String s)   //字符串和byte数组的相互转换功能
+    {
+        System.out.print("\n字符串和byte数组的相互转换功能\n");
+        byte [] b = s.getBytes();   //把字符串变成byte数组
+        String s1 = new String(b);   //把byte数组全部变为字符串
+        String s2 = new String(b, 0, 8);   //把byte数组从指定位置以及位数变为字符串
+    }
+
+    public static void demo4(String s)   //取得一个字符串的长度
+    {
+        System.out.print("\n取得一个字符串的长度\n");
+        int sl = s.length();   //用length取得字符串长度,记得要加()
+        System.out.println(sl);
+    }
+
+    public static void demo5(String s)   //查找指定的字符串是否存在
+    {
+        System.out.print("\n查找指定的字符串是否存在\n");
+        System.out.println(s.indexOf("o"));   //从头开始查找并返回位置
+        System.out.println(s.indexOf("o",8));   //从指定位置开始查找并返回位置
+        System.out.println(s.indexOf("k"));   //找不到则返回-1
+    }
+
+    public static void demo6(String s)   //去除左右两端空格
+    {
+        System.out.print("\n去除左右两端空格\n");
+        System.out.println(s.trim());   //去掉字符串左右的空格并输出
+    }
+
+    public static void demo7(String s)   //字符串截取
+    {
+        System.out.print("\n字符串截取\n");
+        System.out.println(s.substring(9));   //截取第9位开始后面的字符串
+        System.out.println(s.substring(3,8));   //截取第3位到第8位的字符串
+    }
+
+    public static void demo8(String s)   //拆分字符串
+    {
+        System.out.print("\n拆分字符串\n");
+        String st = s.trim();   //去除字符串两边的空格
+        String [] sa = st.split(" ");   //按空格将字符串拆分成字符串数组
+        for(int i = 0; i < sa.length; i++)
+        {
+            System.out.println(sa[i]);
+        }
+    }
+
+    public static void demo9(String s)   //大小写转换
+    {
+        System.out.print("\n大小写转换\n");
+        System.out.println(s.toUpperCase());   //全部转成大写
+        System.out.println(s.toLowerCase());   //全部转成小写
+    }
+
+    public static void demo10(String s)   //判断是否以指定字符串开头或结尾
+    {
+        System.out.print("\n判断是否以指定字符串开头或结尾\n");
+        String st = s.trim();
+        System.out.println(st.startsWith("Hello"));   //判断字符串是否以"Hello"开头
+        System.out.println(st.endsWith("World!!!"));   //判断字符串是否以"world!!!"结尾
+    }
+
+    public static void demo11(String s)   //不区分大小写的比较
+    {
+        System.out.print("\n不区分大小写的比较\n");
+        System.out.println(s.equals("   hello world!!!   "));   //区分大小写的比较
+        System.out.println(s.equalsIgnoreCase("   hello world!!!   "));   //不区分大小写的的比较
+    }
+
+    public static void demo12(String s)   //字符串替换功能
+    {
+        System.out.print("\n字符串替换功能\n");
+        String sr = s.replaceAll("l","x");
+        System.out.println(sr);
+    }
+}
+*/
+
+/*
 public class Main   //String类
 {
     public static void main(String[]args)

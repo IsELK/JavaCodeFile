@@ -32,7 +32,6 @@ public class ZuoYe20210420   //2021年4月20日课堂作业
             o[ol] = n[i];
             ol++;
         }
-        ol--;
         Arrays.sort(o);   //把导入完数据的总顺序表排序
         for(int i = 0; i < ol-1; i++)   //遍历数组查重并删除
         {
@@ -41,7 +40,9 @@ public class ZuoYe20210420   //2021年4月20日课堂作业
             {
                 for(int j = dl; j < ol-1; j++)   //从重复的数开始后面的数全部往前推一位并覆盖重复数(等同于删除)
                 {
+                    int temp = o[j];
                     o[j] = o[j+1];
+                    o[j+1] = temp;
                 }
                 ol--;   //删除后总顺序表的计数少一
             }
