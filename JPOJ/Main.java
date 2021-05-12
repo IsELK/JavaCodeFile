@@ -2,6 +2,85 @@ package JPOJ;
 
 
 
+/*
+import java.util.Scanner;
+
+public class Main   //C. 病毒的增生
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        long k = in.nextLong();
+        long s = in.nextLong();
+        long h = in.nextLong();
+        for(long i = 0; i < h; i++)
+        {
+            s = (s * k) % 20212021;
+        }
+        System.out.println(s);
+    }
+}
+*/
+
+/*
+import java.util.Scanner;
+
+public class Main   //B. 买股票的时机
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int [] n = new int[in.nextInt()];
+        for(int i = 0; i < n.length; i++)
+        {
+            n[i] = in.nextInt();
+        }
+        int s = in.nextInt();
+        int e = in.nextInt();
+        while (s != 0 && e != 0)
+        {
+            int temp = Integer.MAX_VALUE;
+            for(int i = s - 1; i <= e - 1; i++)
+            {
+                if(temp > n[i])
+                    temp = n[i];
+            }
+            for(int i = s - 1; i <= e - 1; i++)
+            {
+                if(temp == n[i])
+                    System.out.println(i + 1);
+            }
+            s = in.nextInt();
+            e = in.nextInt();
+        }
+    }
+}
+*/
+
+/*
+import java.util.Scanner;
+
+public class Main   //A. abc中的最大值
+{
+    public static void main(String[]args)
+    {
+        Scanner in = new Scanner(System.in);
+        int [] n = new int[3];
+        for(int i = 0; i < n.length; i++)
+        {
+            n[i] = in.nextInt();
+        }
+        int temp = 0;
+        for(int i = 0; i < n.length; i++)
+        {
+            if(temp < n[i])
+                temp = n[i];
+        }
+        System.out.println(temp);
+    }
+}
+*/
+
 //import java.util.Scanner;
 //
 //public class Main   //D. 下一个镜像数
