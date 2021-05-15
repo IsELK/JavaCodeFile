@@ -33,7 +33,7 @@ public class ZuoYe20210514   //2021年5月14日课堂作业
         }
     }
 }
-
+ 
 class BaseConversion   //构造一个进制转换类
 {
     Node head = new Node(-1);   //声明且实例化一个顶部指针
